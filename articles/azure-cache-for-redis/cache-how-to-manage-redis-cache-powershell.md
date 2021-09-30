@@ -860,6 +860,31 @@ The following command reboots both nodes of the specified cache.
     -Force
 ```
 
+## How to attach a private endpoint to Azure Cache for Redis
+
+The following command get details of a private endpoint connection named MyPrivateEndpointConnection belongs to private link service named MycacheName.
+
+```azurepowershell
+    PS C:\>Get-AzPrivateEndpointConnection -ResourceId "/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{MycacheName}/privateEndpointConnections/{MyPrivateEndpointConnection}"
+                                                           or  
+    PS C:\>Get-AzPrivateEndpointConnection -Name "MyPrivateEndpointConnection" -ResourceGroupName "resourceGroupName" 
+    -ServiceName "MycacheName" -PrivateLinkResourceType "Microsoft.Cache/Redis"
+```
+
+The following command denies a private endpoint connection named MyPrivateEndpointConnection belongs to private link service named MycacheName.
+
+```azurepowershell
+    PS C:\>Deny-AzPrivateEndpointConnection -ResourceId "/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{MycacheName}/privateEndpointConnections/{MyPrivateEndpointConnection}"
+```
+
+The following command removes a private endpoint connection named MyPrivateEndpointConnection belongs to private link service named MycacheName.
+
+```azurepowershell
+    PS C:\>Remove-AzPrivateEndpointConnection -ResourceId "/subscriptions/{subscriptionID}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{MycacheName}/privateEndpointConnections/{MyPrivateEndpointConnection}"
+                                                            or 
+    PS C:\>Remove-AzPrivateEndpointConnection -Name "MyPrivateEndpointConnection" -ResourceGroupName "resourceGroupName" 
+    -ServiceName "MycacheName" -PrivateLinkResourceType "Microsoft.Cache/Redis"
+```
 
 ## Next steps
 
